@@ -1,0 +1,89 @@
+.keyboard-area {
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    background-color: whitesmoke;
+    opacity: 0.8;
+}
+
+.wrapper {
+  min-width: 1000px;
+  max-width: 1350px;
+  margin: auto;
+  padding: 25px;
+  background: #dde1e7;
+  box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+  border: solid 1px red;
+  /* background: #131419; */
+  /* box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
+              -3px -3px 7px rgba(255,255,255,0.05); */
+}
+
+.wrapper .keys {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper .keys input {
+  height: 50px;
+  min-width: 50px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #dde1e7;
+  box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+  /* background: #131419; */
+  /* box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
+              -3px -3px 7px rgba(255,255,255,0.05); */
+  margin: 10px;
+  color: black;
+  /* color: #c7c7c7; */
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.wrapper .keys input:hover {
+  background-color: orangered;
+}
+
+/*.wrapper .keys input:focus{*/
+/*  font-size: 19px;*/
+/*  color: #3498db;*/
+/*  box-shadow: inset -3px -3px 7px #ffffff73,*/
+/*              inset 2px 2px 5px rgba(94,104,121,0.288);*/
+/*}*/
+
+.wrapper .keys input[value="SHIFT"]{
+  width: 10.75%;
+}
+
+.wrapper .keys input[name="BACKSPACE"]{
+  width: 9.25%;
+}
+
+.wrapper .keys input[name="TAB"]{
+  width: 6.65%;
+}
+
+.wrapper .keys input[name="|"]{
+  width: 6.5%;
+}
+
+.wrapper .keys input[name="CAPSLOCK"]{
+  width: 7.85%;
+}
+
+.wrapper .keys input[name="ENTER"]{
+  width: 10.75%;
+}
+
+.wrapper .keys input[name="SHIFT"]{
+  width: 7.95%;
+}
+
+.wrapper .keys input[name="OG80"]{
+  width: 36.5%;
+}

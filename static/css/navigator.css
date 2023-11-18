@@ -1,0 +1,56 @@
+.com-content {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.music-keyboard {
+    width: 90%;
+    height: 320px;
+    margin: 10px auto;
+    background-color: #dde1e7;
+    opacity: 0.8;
+}
+
+.n-wrapper {
+  min-width: 1000px;
+  max-width: 1350px;
+  margin: auto;
+  padding: 25px;
+  background: #dde1e7;
+  box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+  border: solid 1px red;
+  /* background: #131419; */
+  /* box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
+              -3px -3px 7px rgba(255,255,255,0.05); */
+}
+
+.n-wrapper .keys {
+  display: flex;
+  justify-content: center;
+}
+
+.n-wrapper .keys input {
+  height: 50px;
+  min-width: 50px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #dde1e7;
+  box-shadow: -3px -3px 7px #ffffff73,
+               2px 2px 5px rgba(94,104,121,0.288);
+  /* background: #131419; */
+  /* box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
+              -3px -3px 7px rgba(255,255,255,0.05); */
+  margin: 10px;
+  color: grey;
+  /* color: #c7c7c7; */
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.n-wrapper .keys input:hover {
+  background-color: orangered;
+}

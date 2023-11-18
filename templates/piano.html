@@ -1,0 +1,647 @@
+<html data-lt-installed="true">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="user-scalable=no">
+    <title>电子钢琴-ePiano</title>
+    <link rel="icon" href="{{ url_for('static', filename='/images/piano.ico') }}">
+    <link href="{{ url_for('static', filename='css/share.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/piano.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/keyboard.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/navigator.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/control.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/switch.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div class="page-pc">
+        <div class="app-bg" style="background-image: url('/static/images/mood.png')"></div>
+        <div class="app-content">
+          <div class="component-random-lyric">
+            <div class="com-content">
+              <div class="control-area">
+                <div class="control-btn">
+                  <input type="button" value="隐藏键盘">
+                  <input type="button" value="隐藏钢琴">
+                  <input type="button" value="隐藏曲谱">
+                </div>
+              </div>
+              <div class="keyboard-area">
+                <div class="wrapper">
+                  <div class="keys">
+                     <input id="switch" type="image" src="{{ url_for('static', filename='images/keyboard.svg') }}" alt="k" name="keyboard" style="background-color: #009999">
+                     <input type="button" value="" style="visibility: hidden">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="">
+                     <input type="button" value="1">
+                     <input type="button" value="2">
+                     <input type="button" value="3">
+                     <input type="button" value="4">
+                     <input type="button" value="5">
+                     <input type="button" value="6">
+                     <input type="button" value="7">
+                     <input type="button" value="8">
+                     <input type="button" value="9">
+                     <input type="button" value="0">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="" name="BACKSPACE" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #009999">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="" name="TAB" style="background-color: #A0A0A0">
+                     <input type="button" value="Q">
+                     <input type="button" value="W">
+                     <input type="button" value="E">
+                     <input type="button" value="R">
+                     <input type="button" value="T">
+                     <input type="button" value="Y">
+                     <input type="button" value="U">
+                     <input type="button" value="I">
+                     <input type="button" value="O">
+                     <input type="button" value="P">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="" name="|">
+                     <input type="button" value="" style="background-color: #009999">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="" name="CAPSLOCK" style="background-color: #A0A0A0">
+                     <input type="button" value="A">
+                     <input type="button" value="S">
+                     <input type="button" value="D">
+                     <input type="button" value="F">
+                     <input type="button" value="G">
+                     <input type="button" value="H">
+                     <input type="button" value="J">
+                     <input type="button" value="K">
+                     <input type="button" value="L">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="" name="ENTER" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #009999">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="SHIFT" style="background-color: #A0A0A0" id="shift">
+                     <input type="button" value="Z">
+                     <input type="button" value="X">
+                     <input type="button" value="C">
+                     <input type="button" value="V">
+                     <input type="button" value="B">
+                     <input type="button" value="N">
+                     <input type="button" value="M">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="" name="SHIFT" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #009999">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="OG80" name="OG80" style="background-color: #009999">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                     <input type="button" value="" style="background-color: #A0A0A0">
+                  </div>
+               </div>
+            </div>
+              <div class="component-autopiano">
+              <div class="piano-scroll-wrap">
+                <div class="piano-wrap responsive-section-a visible">
+                  <div class="piano-band">
+                    <div class="piano-tip">XueFeng的电子钢琴</div>
+                  </div>
+                  <div class="piano-key-wrap" style="height: 223.648px;">
+                    <div data-keycode="49" data-name="C2" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">1</div>
+                        <div class="singname" style="color: red;">do</div>
+                        <div class="notename" style="display: none;">C2</div></div>
+                    </div>
+                    <div data-keycode="50" data-name="D2" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">2</div>
+                        <div class="singname" style="color: orange;">re</div>
+                        <div class="notename" style="display: none;">D2</div></div>
+                    </div>
+                    <div data-keycode="51" data-name="E2" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">3</div>
+                        <div class="singname" style="color: yellowgreen;">mi</div>
+                        <div class="notename" style="display: none;">E2</div></div>
+                    </div>
+                    <div data-keycode="52" data-name="F2" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">4</div>
+                        <div class="singname" style="color: green;">fa</div>
+                        <div class="notename" style="display: none;">F2</div></div>
+                    </div>
+                    <div data-keycode="53" data-name="G2" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">5</div>
+                        <div class="singname" style="color: cyan;">so</div>
+                        <div class="notename" style="display: none;">G2</div></div>
+                    </div>
+                    <div data-keycode="54" data-name="A2" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">6</div>
+                        <div class="singname" style="color: blue;">la</div>
+                        <div class="notename" style="display: none;">A2</div></div>
+                    </div>
+                    <div data-keycode="55" data-name="B2" class="piano-key wkey" style="background:yellow;">
+                      <div class="keytip">
+                        <div class="keyname">7</div>
+                        <div class="singname" style="color: purple;">si</div>
+                        <div class="notename" style="display: none;">B2</div></div>
+                    </div>
+                    <div data-keycode="56" data-name="C3" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">8</div>
+                        <div class="singname" style="color: red;">do</div>
+                        <div class="notename" style="display: none;">C3</div></div>
+                    </div>
+                    <div data-keycode="57" data-name="D3" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">9</div>
+                        <div class="singname" style="color: orange;">re</div>
+                        <div class="notename" style="display: none;">D3</div></div>
+                    </div>
+                    <div data-keycode="48" data-name="E3" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">0</div>
+                        <div class="singname" style="color: yellowgreen;">mi</div>
+                        <div class="notename" style="display: none;">E3</div></div>
+                    </div>
+                    <div data-keycode="81" data-name="F3" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">Q</div>
+                        <div class="singname" style="color: green;">fa</div>
+                        <div class="notename" style="display: none;">F3</div></div>
+                    </div>
+                    <div data-keycode="87" data-name="G3" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">W</div>
+                        <div class="singname" style="color: cyan;">so</div>
+                        <div class="notename" style="display: none;">G3</div></div>
+                    </div>
+                    <div data-keycode="69" data-name="A3" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">E</div>
+                        <div class="singname" style="color: blue;">la</div>
+                        <div class="notename" style="display: none;">A3</div></div>
+                    </div>
+                    <div data-keycode="82" data-name="B3" class="piano-key wkey" style="background:yellow;">
+                      <div class="keytip">
+                        <div class="keyname">R</div>
+                        <div class="singname" style="color: purple;">si</div>
+                        <div class="notename" style="display: none;">B3</div></div>
+                    </div>
+                    <div data-keycode="84" data-name="C4" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">T</div>
+                        <div class="singname" style="color: red;">do</div>
+                        <div class="notename" style="display: none;">C4</div></div>
+                    </div>
+                    <div data-keycode="89" data-name="D4" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">Y</div>
+                        <div class="singname" style="color: orange;">re</div>
+                        <div class="notename" style="display: none;">D4</div></div>
+                    </div>
+                    <div data-keycode="85" data-name="E4" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">U</div>
+                        <div class="singname" style="color: yellowgreen;">mi</div>
+                        <div class="notename" style="display: none;">E4</div></div>
+                    </div>
+                    <div data-keycode="73" data-name="F4" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">I</div>
+                        <div class="singname" style="color: green;">fa</div>
+                        <div class="notename" style="display: none;">F4</div></div>
+                    </div>
+                    <div data-keycode="79" data-name="G4" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">O</div>
+                        <div class="singname" style="color: cyan;">so</div>
+                        <div class="notename" style="display: none;">G4</div></div>
+                    </div>
+                    <div data-keycode="80" data-name="A4" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">P</div>
+                        <div class="singname" style="color: blue;">la</div>
+                        <div class="notename" style="display: none;">A4</div></div>
+                    </div>
+                    <div data-keycode="65" data-name="B4" class="piano-key wkey" style="background:yellow;">
+                      <div class="keytip">
+                        <div class="keyname">A</div>
+                        <div class="singname" style="color: purple;">si</div>
+                        <div class="notename" style="display: none;">B4</div></div>
+                    </div>
+                    <div data-keycode="83" data-name="C5" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">S</div>
+                        <div class="singname" style="color: red;">do</div>
+                        <div class="notename" style="display: none;">C5</div></div>
+                    </div>
+                    <div data-keycode="68" data-name="D5" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">D</div>
+                        <div class="singname" style="color: orange;">re</div>
+                        <div class="notename" style="display: none;">D5</div></div>
+                    </div>
+                    <div data-keycode="70" data-name="E5" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">F</div>
+                        <div class="singname" style="color: yellowgreen;">mi</div>
+                        <div class="notename" style="display: none;">E5</div></div>
+                    </div>
+                    <div data-keycode="71" data-name="F5" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">G</div>
+                        <div class="singname" style="color: green;">fa</div>
+                        <div class="notename" style="display: none;">F5</div></div>
+                    </div>
+                    <div data-keycode="72" data-name="G5" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">H</div>
+                        <div class="singname" style="color: cyan;">so</div>
+                        <div class="notename" style="display: none;">G5</div></div>
+                    </div>
+                    <div data-keycode="74" data-name="A5" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">J</div>
+                        <div class="singname" style="color: blue;">la</div>
+                        <div class="notename" style="display: none;">A5</div></div>
+                    </div>
+                    <div data-keycode="75" data-name="B5" class="piano-key wkey" style="background:yellow;">
+                      <div class="keytip">
+                        <div class="keyname">K</div>
+                        <div class="singname" style="color: purple;">si</div>
+                        <div class="notename" style="display: none;">B5</div></div>
+                    </div>
+                    <div data-keycode="76" data-name="C6" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">L</div>
+                        <div class="singname" style="color: red;">do</div>
+                        <div class="notename" style="display: none;">C6</div></div>
+                    </div>
+                    <div data-keycode="90" data-name="D6" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">Z</div>
+                        <div class="singname" style="color: orange;">re</div>
+                        <div class="notename" style="display: none;">D6</div></div>
+                    </div>
+                    <div data-keycode="88" data-name="E6" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">X</div>
+                        <div class="singname" style="color: yellowgreen;">mi</div>
+                        <div class="notename" style="display: none;">E6</div></div>
+                    </div>
+                    <div data-keycode="67" data-name="F6" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">C</div>
+                        <div class="singname" style="color: green;">fa</div>
+                        <div class="notename" style="display: none;">F6</div></div>
+                    </div>
+                    <div data-keycode="86" data-name="G6" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">V</div>
+                        <div class="singname" style="color: cyan;">so</div>
+                        <div class="notename" style="display: none;">G6</div></div>
+                    </div>
+                    <div data-keycode="66" data-name="A6" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">B</div>
+                        <div class="singname" style="color: blue;">la</div>
+                        <div class="notename" style="display: none;">A6</div></div>
+                    </div>
+                    <div data-keycode="78" data-name="B6" class="piano-key wkey" style="background:yellow;">
+                      <div class="keytip">
+                        <div class="keyname">N</div>
+                        <div class="singname" style="color: purple;">si</div>
+                        <div class="notename" style="display: none;">B6</div></div>
+                    </div>
+                    <div data-keycode="77" data-name="C7" class="piano-key wkey">
+                      <div class="keytip">
+                        <div class="keyname">M</div>
+                        <div class="singname" style="color: red;">do</div>
+                        <div class="notename" style="display: none;">C7</div></div>
+                    </div>
+                    <div class="bkey-wrap bkey-wrap1">
+                      <div data-keycode="b49" data-name="C#2" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>1</div></div>
+                      </div>
+                      <div data-keycode="b50" data-name="D#2" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>2</div></div>
+                      </div>
+                      <div data-keycode="b52" data-name="F#2" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>4</div></div>
+                      </div>
+                      <div data-keycode="b53" data-name="G#2" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>5</div></div>
+                      </div>
+                      <div data-keycode="b54" data-name="A#2" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>6</div></div>
+                      </div>
+                    </div>
+                    <div class="bkey-wrap bkey-wrap2">
+                      <div data-keycode="b56" data-name="C#3" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>8</div></div>
+                      </div>
+                      <div data-keycode="b57" data-name="D#3" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>9</div></div>
+                      </div>
+                      <div data-keycode="b81" data-name="F#3" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>Q</div></div>
+                      </div>
+                      <div data-keycode="b87" data-name="G#3" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>W</div></div>
+                      </div>
+                      <div data-keycode="b69" data-name="A#3" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>E</div></div>
+                      </div>
+                    </div>
+                    <div class="bkey-wrap bkey-wrap3">
+                      <div data-keycode="b84" data-name="C#4" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>T</div></div>
+                      </div>
+                      <div data-keycode="b89" data-name="D#4" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>Y</div></div>
+                      </div>
+                      <div data-keycode="b73" data-name="F#4" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>I</div></div>
+                      </div>
+                      <div data-keycode="b79" data-name="G#4" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>O</div></div>
+                      </div>
+                      <div data-keycode="b80" data-name="A#4" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>P</div></div>
+                      </div>
+                    </div>
+                    <div class="bkey-wrap bkey-wrap4">
+                      <div data-keycode="b83" data-name="C#5" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>S</div></div>
+                      </div>
+                      <div data-keycode="b68" data-name="D#5" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>D</div></div>
+                      </div>
+                      <div data-keycode="b71" data-name="F#5" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>G</div></div>
+                      </div>
+                      <div data-keycode="b72" data-name="G#5" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>H</div></div>
+                      </div>
+                      <div data-keycode="b74" data-name="A#5" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>J</div></div>
+                      </div>
+                    </div>
+                    <div class="bkey-wrap bkey-wrap5">
+                      <div data-keycode="b76" data-name="C#6" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>L</div></div>
+                      </div>
+                      <div data-keycode="b90" data-name="D#6" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>Z</div></div>
+                      </div>
+                      <div data-keycode="b67" data-name="F#6" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>C</div></div>
+                      </div>
+                      <div data-keycode="b86" data-name="G#6" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>V</div></div>
+                      </div>
+                      <div data-keycode="b66" data-name="A#6" class="piano-key bkey" style="height: 164.554px;">
+                        <div class="keytip">
+                          <div class="keyname">⇧
+                            <br>+
+                            <br>B</div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <div class="switch-differ">
+                <div class="switch-btn">
+                  <input type="button" value="显示简谱">
+                  <input type="button" value="显示键序">
+                  <input type="button" value="自动弹奏">
+                </div>
+              </div>
+              <div class="music-keyboard">
+                <div class="n-wrapper">
+                  <div class="keys">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                  </div>
+                  <div class="keys">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                     <input type="button" value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery3.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tone.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vue.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/piano.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/keyboard.js') }}"></script>
+  </body>
+</html>

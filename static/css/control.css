@@ -1,0 +1,22 @@
+.control-area {
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    border: solid 1px red;
+}
+
+.control-btn input {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    background: #dde1e7;
+}
+
+.control-btn input:hover {
+    background-color: orangered;
+}
