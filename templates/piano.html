@@ -4,7 +4,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="user-scalable=no">
-    <title>电子钢琴-ePiano</title>
+    <title>电子钢琴-EPiano</title>
     <link rel="icon" href="{{ url_for('static', filename='/images/piano.ico') }}">
     <link href="{{ url_for('static', filename='css/share.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/piano.css') }}" rel="stylesheet">
@@ -130,10 +130,10 @@
               <div class="component-autopiano">
               <div class="piano-scroll-wrap">
                 <div class="piano-wrap responsive-section-a visible">
-                  <div class="piano-band">
-                    <div class="piano-tip">XueFeng的电子钢琴</div>
-                  </div>
-                  <div class="piano-key-wrap" style="height: 223.648px;">
+<!--                  <div class="piano-band">-->
+<!--                    <div class="piano-tip">XueFeng的电子钢琴</div>-->
+<!--                  </div>-->
+                  <div class="piano-key-wrap">
                     <div data-keycode="49" data-name="C2" class="piano-key wkey">
                       <div class="keytip">
                         <div class="keyname">1</div>
@@ -516,9 +516,9 @@
             </div>
               <div class="switch-differ">
                 <div class="switch-btn">
-                  <input type="button" value="显示简谱">
-                  <input type="button" value="显示键序">
-                  <input type="button" value="自动弹奏">
+                  <input type="button" value="显示简谱/键序">
+                  <input type="button" value="上传midi文件">
+                  <input type="button" value="钢琴自动弹奏">
                 </div>
               </div>
               <div class="music-keyboard">

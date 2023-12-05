@@ -536,7 +536,7 @@ a {
 	-webkit-box-shadow:5px 5px 20px 5px #888;
 	box-shadow:5px 5px 20px 5px #888;
 	border-radius:5px;
-	border: solid 1px red;
+	border: solid 4px black;
 	position:relative;
 	overflow:hidden;
 	opacity:0.8;
@@ -593,7 +593,7 @@ a {
 }
 
 .component-autopiano .piano-wrap .piano-key-wrap .wkey:hover {
-	border: solid 3px orangered;
+	border: solid 1px black;
 }
 .component-autopiano .piano-wrap .piano-key-wrap .wkey:active {
 	-webkit-box-shadow:0 2px 2px rgba(0,0,0,0.4);
@@ -681,8 +681,7 @@ a {
 }
 
 .component-autopiano .piano-wrap .piano-key-wrap .bkey:hover {
-	border: solid 2px orangered;
-
+	border: solid 1px white;
 }
 
 .component-autopiano .piano-wrap .piano-key-wrap .bkey:active {

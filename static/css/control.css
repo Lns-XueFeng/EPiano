@@ -4,11 +4,12 @@
     margin: 10px auto;
     background-color: whitesmoke;
     opacity: 0.9;
-    border: solid 1px red;
+    border-radius: 5px;
+    border: solid 4px black;
 }
 
 .control-btn input {
-    width: 100px;
+    width: auto;
     height: auto;
     padding: 10px;
     border: none;
