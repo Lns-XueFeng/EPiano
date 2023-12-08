@@ -8,16 +8,54 @@
     border: solid 4px black;
 }
 
+.switch-btn .form-group {
+    width: auto;
+    height: auto;
+    display: inline;
+}
+
 .switch-btn input {
     width: auto;
     height: auto;
     padding: 10px;
     border: none;
     outline: none;
-    margin: 5px;
+    margin: 2px;
     background: #dde1e7;
 }
 
+.switch-btn .form-control-label {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin: 2px;
+    background: #dde1e7;
+}
+
+.switch-btn select {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin: 2px;
+    background: #dde1e7;
+}
+
+.switch-btn .form {
+    display: inline;
+}
+
 .switch-btn input:hover {
+    background-color: orangered;
+}
+
+.switch-btn .form-control-label:hover {
+    background-color: orangered;
+}
+
+.switch-btn select:hover {
     background-color: orangered;
 }

@@ -46,166 +46,181 @@ for (let k of kv_map.keys()) {
     vk_map.set(kv_map.get(k), k);
 }
 
-window.onload = function(){
-    document.onkeydown = function(event) {
-        let current_key = event.key.toUpperCase();
-        let switch_btn = document.querySelector("#switch");
-        if (current_key == " ") { return }
-        if (switch_btn.name == "keyboard") {
-            let keys = document.querySelectorAll(".keys");
-            let input_array = new Array();
-            for (let key of keys) {
-                for (let input of key.children) {
-                        input_array.push(input);
-                }
-            }
-            for (let input of input_array) {
-                if (current_key == "!" && input.value == "1") {
-                    input.style.backgroundColor = "red";
-                }
-                if (current_key == "@" && input.value == "2") {
-                    input.style.backgroundColor = "red";
-                }
-                if (current_key == "$" && input.value == "4") {
-                    input.style.backgroundColor = "red";
-                }
-                if (current_key == "%" && input.value == "5") {
-                    input.style.backgroundColor = "red";
-                }
-                if (current_key == "^" && input.value == "6") {
-                    input.style.backgroundColor = "red";
-                }
-                if (current_key == "*" && input.value == "8") {
-                    input.style.backgroundColor = "red";
-                }
-                if (current_key == "(" && input.value == "9") {
-                    input.style.backgroundColor = "red";
-                }
-                if (input.value == current_key) {
-                    input.style.backgroundColor = "red";
-                }
+document.onkeydown = function(event) {
+    let current_key = event.key.toUpperCase();
+    let switch_btn = document.querySelector("#switch");
+    if (current_key == " ") { return }
+    if (switch_btn.name == "keyboard") {
+        let keys = document.querySelectorAll(".keys");
+        let input_array = new Array();
+        for (let key of keys) {
+            for (let input of key.children) {
+                    input_array.push(input);
             }
         }
-        if (switch_btn.name == "music_note") {
-            let keys = document.querySelectorAll(".keys");
-            let input_array = new Array();
-            for (let key of keys) {
-                for (let input of key.children) {
-                        input_array.push(input);
-                }
+        for (let input of input_array) {
+            if (current_key == "!" && input.value == "1") {
+                input.style.backgroundColor = "red";
             }
-            for (let input of input_array) {
-                if (input.value == kv_map.get(current_key)) {
-                    input.style.backgroundColor = "red";
-                }
+            if (current_key == "@" && input.value == "2") {
+                input.style.backgroundColor = "red";
             }
-        }
-    };
-
-    document.onkeyup = function(event) {
-        let current_key = event.key.toUpperCase();
-        let switch_btn = document.querySelector("#switch");
-        if (switch_btn.name == "keyboard") {
-            let keys = document.querySelectorAll(".keys");
-            let input_array = new Array();
-            for (let key of keys) {
-                for (let input of key.children) {
-                        input_array.push(input);
-                }
+            if (current_key == "$" && input.value == "4") {
+                input.style.backgroundColor = "red";
             }
-            for (let input of input_array) {
-                if (current_key == "!" && input.value == "1") {
-                    input.style.backgroundColor = "#dde1e7";
-                }
-                if (current_key == "@" && input.value == "2") {
-                    input.style.backgroundColor = "#dde1e7";
-                }
-                if (current_key == "$" && input.value == "4") {
-                    input.style.backgroundColor = "#dde1e7";
-                }
-                if (current_key == "%" && input.value == "5") {
-                    input.style.backgroundColor = "#dde1e7";
-                }
-                if (current_key == "^" && input.value == "6") {
-                    input.style.backgroundColor = "#dde1e7";
-                }
-                if (current_key == "*" && input.value == "8") {
-                    input.style.backgroundColor = "#dde1e7";
-                }
-                if (current_key == "(" && input.value == "9") {
-                    input.style.backgroundColor = "#dde1e7";
-                }
-                if (input.value == current_key) {
-                    input.style.backgroundColor = "#dde1e7";
-                    if (current_key == "SHIFT") {
-                        input.style.backgroundColor = "#A0A0A0";
-                        input.style.width = "10.75%";
-                    }
-                }
+            if (current_key == "%" && input.value == "5") {
+                input.style.backgroundColor = "red";
             }
-        }
-        if (switch_btn.name == "music_note") {
-            let keys = document.querySelectorAll(".keys");
-            let input_array = new Array();
-            for (let key of keys) {
-                for (let input of key.children) {
-                        input_array.push(input);
-                }
+            if (current_key == "^" && input.value == "6") {
+                input.style.backgroundColor = "red";
             }
-            for (let input of input_array) {
-                if (input.value == kv_map.get(current_key)) {
-                    input.style.backgroundColor = "#dde1e7";
-                    if (current_key == "SHIFT") {
-                        input.style.backgroundColor = "#A0A0A0";
-                        input.style.width = "10.75%";
-                    }
-                }
+            if (current_key == "*" && input.value == "8") {
+                input.style.backgroundColor = "red";
+            }
+            if (current_key == "(" && input.value == "9") {
+                input.style.backgroundColor = "red";
+            }
+            if (input.value == current_key) {
+                input.style.backgroundColor = "red";
             }
         }
     }
-
-    let switch_btn = document.querySelector("#switch");
-    switch_btn.onclick = function(event) {
-        if (switch_btn.name == "keyboard") {
-            let keys = document.querySelectorAll(".keys");
-            let input_array = new Array();
-            for (let key of keys) {
-                for (let input of key.children) {
+    if (switch_btn.name == "music_note") {
+        let keys = document.querySelectorAll(".keys");
+        let input_array = new Array();
+        for (let key of keys) {
+            for (let input of key.children) {
                     input_array.push(input);
-                }
             }
-            for (let input of input_array) {
-                if (kv_map.has(input.value)) {
-                    console.log(input.value);
-                    input.value = kv_map.get(input.value);
-                }
-            }
-            switch_btn.name = "music_note";
-            switch_btn.src = "/static/images/music-note.svg";
-            let shift_btn = document.querySelector("#shift");
-            shift_btn.style.width = "10.75%";
-            return
         }
-        if (switch_btn.name == "music_note") {
-            let keys = document.querySelectorAll(".keys");
-            let input_array = new Array();
-            for (let key of keys) {
-                for (let input of key.children) {
-                    input_array.push(input);
-                }
+        for (let input of input_array) {
+            if (input.value == kv_map.get(current_key)) {
+                input.style.backgroundColor = "red";
             }
-            console.log(input_array);
-            for (let input of input_array) {
-                if (vk_map.has(input.value)) {
-                    console.log(input.value);
-                    input.value = vk_map.get(input.value);
-                }
-            }
-            switch_btn.name = "keyboard";
-            switch_btn.src = "/static/images/keyboard.svg";
-            let shift_btn = document.querySelector("#shift");
-            shift_btn.style.width = "10.75%";
-            return
         }
     }
 };
+
+document.onkeyup = function(event) {
+    let current_key = event.key.toUpperCase();
+    let switch_btn = document.querySelector("#switch");
+    if (switch_btn.name == "keyboard") {
+        let keys = document.querySelectorAll(".keys");
+        let input_array = new Array();
+        for (let key of keys) {
+            for (let input of key.children) {
+                    input_array.push(input);
+            }
+        }
+        for (let input of input_array) {
+            if (current_key == "!" && input.value == "1") {
+                input.style.backgroundColor = "#dde1e7";
+            }
+            if (current_key == "@" && input.value == "2") {
+                input.style.backgroundColor = "#dde1e7";
+            }
+            if (current_key == "$" && input.value == "4") {
+                input.style.backgroundColor = "#dde1e7";
+            }
+            if (current_key == "%" && input.value == "5") {
+                input.style.backgroundColor = "#dde1e7";
+            }
+            if (current_key == "^" && input.value == "6") {
+                input.style.backgroundColor = "#dde1e7";
+            }
+            if (current_key == "*" && input.value == "8") {
+                input.style.backgroundColor = "#dde1e7";
+            }
+            if (current_key == "(" && input.value == "9") {
+                input.style.backgroundColor = "#dde1e7";
+            }
+            if (input.value == current_key) {
+                input.style.backgroundColor = "#dde1e7";
+                if (current_key == "SHIFT") {
+                    input.style.backgroundColor = "#A0A0A0";
+                    input.style.width = "10.75%";
+                }
+            }
+        }
+    }
+    if (switch_btn.name == "music_note") {
+        let keys = document.querySelectorAll(".keys");
+        let input_array = new Array();
+        for (let key of keys) {
+            for (let input of key.children) {
+                    input_array.push(input);
+            }
+        }
+        for (let input of input_array) {
+            if (input.value == kv_map.get(current_key)) {
+                input.style.backgroundColor = "#dde1e7";
+                if (current_key == "SHIFT") {
+                    input.style.backgroundColor = "#A0A0A0";
+                    input.style.width = "10.75%";
+                }
+            }
+        }
+    }
+}
+
+let switch_btn = document.querySelector("#switch");
+switch_btn.onclick = function(event) {
+    if (switch_btn.name == "keyboard") {
+        let keys = document.querySelectorAll(".keys");
+        let input_array = new Array();
+        for (let key of keys) {
+            for (let input of key.children) {
+                input_array.push(input);
+            }
+        }
+        for (let input of input_array) {
+            if (kv_map.has(input.value)) {
+                console.log(input.value);
+                input.value = kv_map.get(input.value);
+            }
+        }
+        switch_btn.name = "music_note";
+        switch_btn.src = "/static/images/music-note.svg";
+        let shift_btn = document.querySelector("#shift");
+        shift_btn.style.width = "10.75%";
+        return
+    }
+    if (switch_btn.name == "music_note") {
+        let keys = document.querySelectorAll(".keys");
+        let input_array = new Array();
+        for (let key of keys) {
+            for (let input of key.children) {
+                input_array.push(input);
+            }
+        }
+        console.log(input_array);
+        for (let input of input_array) {
+            if (vk_map.has(input.value)) {
+                console.log(input.value);
+                input.value = vk_map.get(input.value);
+            }
+        }
+        switch_btn.name = "keyboard";
+        switch_btn.src = "/static/images/keyboard.svg";
+        let shift_btn = document.querySelector("#shift");
+        shift_btn.style.width = "10.75%";
+        return
+    }
+}
+
+let hide_keyboard_btn = document.querySelector("#hide_keyboard");
+let show_keyboard_btn = document.querySelector("#show_keyboard");
+
+hide_keyboard_btn.onclick = function (event) {
+    let keyboard_area = document.querySelector(".keyboard-area");
+    keyboard_area.style.display = "none";
+    show_note_btn.style.display = "none";
+    show_key_btn.style.display = "none";
+}
+
+show_keyboard_btn.onclick = function (event) {
+    let keyboard_area = document.querySelector(".keyboard-area");
+    keyboard_area.style.display = "block";
+    show_note_btn.style.display = "inline";
+    show_key_btn.style.display = "inline";
+}

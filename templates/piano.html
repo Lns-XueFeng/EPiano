@@ -1,3 +1,5 @@
+{% from 'bootstrap4/form.html' import render_form %}
+
 <html data-lt-installed="true">
   <head>
     <meta charset="utf-8">
@@ -19,12 +21,15 @@
         <div class="app-bg" style="background-image: url('/static/images/mood.png')"></div>
         <div class="app-content">
           <div class="component-random-lyric">
-            <div class="com-content">
+              <div class="com-content">
+              <!-- 在这里写flash相关提示 -->
               <div class="control-area">
                 <div class="control-btn">
-                  <input type="button" value="隐藏键盘">
-                  <input type="button" value="隐藏钢琴">
-                  <input type="button" value="隐藏曲谱">
+<!--                  <input id="show_key" type="button" value="显示键位">-->
+<!--                  <input id="show_note" type="button" value="显示音符">-->
+                  <input id="show_keyboard" type="button" value="显示键盘">
+                  <input type="button" value="键盘左上角切换模式">
+                  <input id="hide_keyboard" type="button" value="隐藏键盘">
                 </div>
               </div>
               <div class="keyboard-area">
@@ -514,125 +519,17 @@
                 </div>
               </div>
             </div>
-              <div class="switch-differ">
-                <div class="switch-btn">
-                  <input type="button" value="显示简谱/键序">
-                  <input type="button" value="上传midi文件">
-                  <input type="button" value="钢琴自动弹奏">
-                </div>
-              </div>
-              <div class="music-keyboard">
-                <div class="n-wrapper">
-                  <div class="keys">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                  </div>
-                  <div class="keys">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                  </div>
-                  <div class="keys">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                  </div>
-                  <div class="keys">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                  </div>
-                  <div class="keys">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                  </div>
-                  <div class="keys">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                     <input type="button" value="">
-                  </div>
-                </div>
-              </div>
+<!--              <div class="switch-differ">-->
+<!--                <div class="switch-btn">-->
+<!--                  <input type="button" value="钢琴自动弹奏" id="autopiano">-->
+<!--                  <select name="mid_list" id="mid_sec">-->
+<!--                    {% for mid in midi_list %}-->
+<!--                      <option value="{{ mid }}">{{ mid }}</option>-->
+<!--                    {% endfor %}-->
+<!--                  </select>-->
+<!--                  {{ render_form(form) }}-->
+<!--                </div>-->
+<!--              </div>-->
             </div>
           </div>
       </div>
@@ -642,6 +539,7 @@
     <script src="{{ url_for('static', filename='js/tone.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vue.js') }}"></script>
     <script src="{{ url_for('static', filename='js/piano.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/keyboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/keyboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/switch.js') }}"></script>
   </body>
 </html>

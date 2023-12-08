@@ -353,10 +353,10 @@ function bindingMouseClickEvent(type) {
   }
 }
 
-//鼠标操作，点击按键播放
-// function clickPianoKey(keyCode) {
-// let pressedNote = this.getNoteByKeyCode(keyCode)
-//   if (pressedNote) {
-//     this.playNote(pressedNote.name)
-//   }
-// }
+// 鼠标操作，点击按键播放
+function clickPianoKey(keyCode) {
+let pressedNote = this.getNoteByKeyCode(keyCode)
+  if (pressedNote) {
+    this.playNote(pressedNote.name)
+  }
+}
